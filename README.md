@@ -5,8 +5,10 @@
 This repo was initialized using https://pixijs.io/pixi-react/#quick-start
 
 ### Usage
-`npm install`
-`npm start`
+```bash
+npm install
+npm start
+```
 
 ### Figma
 

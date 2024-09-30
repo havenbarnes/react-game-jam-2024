@@ -4,6 +4,9 @@
 
 This repo was initialized using https://pixijs.io/pixi-react/#quick-start
 
+### Progress tracking
+Check out [the GitHub Project](https://github.com/users/havenbarnes/projects/7/views/1)
+
 ### Usage
 ```bash
 npm install

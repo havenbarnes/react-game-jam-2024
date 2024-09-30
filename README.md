@@ -2,6 +2,12 @@
 
 ## Game for React Jam 2024 (https://reactjam.com/)
 
+This repo was initialized using https://pixijs.io/pixi-react/#quick-start
+
+### Usage
+`npm install`
+`npm start`
+
 ### Figma
 
 https://www.figma.com/design/W7TW3SLJHOGJGv98mLW2uh/Luke-Warm-Seltzer?node-id=1-5&t=DWER2Cps2Qtq3w2V-1
@@ -12,7 +18,8 @@ https://www.figma.com/design/W7TW3SLJHOGJGv98mLW2uh/Luke-Warm-Seltzer?node-id=1-
 - PixiJS: https://pixijs.download/v7.x/docs/PIXI.Text.html#anchor
 - Physics Engine in PixiJS: https://github.com/KokoDoko/piximatters
 
-Repo started using https://pixijs.io/pixi-react/#quick-start
+
+### Original game reference
 
 | Game board                                                                                   |                                            Rules                                             |                                                                                   Scoreboard |
 | :------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------: | -------------------------------------------------------------------------------------------: |

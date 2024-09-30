@@ -1,6 +1,9 @@
 # Project Luke Warm Seltzer
 ## Game for React Jam 2024 (https://reactjam.com/)
 
+### Figma
+https://www.figma.com/design/W7TW3SLJHOGJGv98mLW2uh/Luke-Warm-Seltzer?node-id=1-5&t=DWER2Cps2Qtq3w2V-1
+
 Repo started using https://pixijs.io/pixi-react/#quick-start
 
 | Game board              | Rules | Scoreboard |

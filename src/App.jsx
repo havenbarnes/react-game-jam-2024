@@ -1,32 +1,23 @@
 import "./App.css";
 
-import { TextStyle } from "pixi.js";
-import { Stage, Container, Sprite, Text } from "@pixi/react";
-import { DIMENSIONS, fromBottom, half } from "./game/dimensions";
+import "@pixi/events";
+import { Stage } from "@pixi/react";
+import { DIMENSIONS } from "./game/dimensions";
+import { Game } from "./Game";
+import { Start } from "./Start";
+import { useState } from "react";
 
 const App = () => {
-  const bunnyUrl = "https://pixijs.io/pixi-react/img/bunny.png";
+  const [step, setStep] = useState("start");
+
   return (
     <Stage
       width={DIMENSIONS.STAGE.WIDTH}
       height={DIMENSIONS.STAGE.HEIGHT}
       options={{ background: 0xf6f6f6 }}
     >
-      <Sprite image={bunnyUrl} x={40} y={150} />
-
-      <Text
-        text="Luke Warm Seltzer"
-        x={half(DIMENSIONS.STAGE.WIDTH)}
-        y={DIMENSIONS.TITLE.TOP}
-        anchor={[0.5, 0]}
-        style={
-          new TextStyle({
-            align: "center",
-            fontFamily: '"Press Start 2P", monospace',
-            fontSize: DIMENSIONS.FONT_SIZE,
-          })
-        }
-      />
+      {step === "start" && <Start setStep={setStep} />}
+      {step === "game" && <Game />}
     </Stage>
   );
 };

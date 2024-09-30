@@ -5,7 +5,8 @@
 This repo was initialized using https://pixijs.io/pixi-react/#quick-start
 
 ### Progress tracking
-Check out [the GitHub Project](https://github.com/users/havenbarnes/projects/7/views/1)
+- Check out [the GitHub Project](https://github.com/users/havenbarnes/projects/7/views/1)
+- Join the [Slack](https://join.slack.com/t/lukewarmseltzer/shared_invite/zt-2rko61kyq-hGKhpcRFt39C7xA6UIBw5g)
 
 ### Usage
 ```bash

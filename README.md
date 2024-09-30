@@ -8,9 +8,9 @@ https://www.figma.com/design/W7TW3SLJHOGJGv98mLW2uh/Luke-Warm-Seltzer?node-id=1-
 
 ### Documentation / Tools
 
-React Pixi: https://pixijs.io/pixi-react/#quick-start
-PixiJS: https://pixijs.download/v7.x/docs/PIXI.Text.html#anchor
-Physics Engine in PixiJS: https://github.com/KokoDoko/piximatters
+- React Pixi: https://pixijs.io/pixi-react/#quick-start
+- PixiJS: https://pixijs.download/v7.x/docs/PIXI.Text.html#anchor
+- Physics Engine in PixiJS: https://github.com/KokoDoko/piximatters
 
 Repo started using https://pixijs.io/pixi-react/#quick-start
 

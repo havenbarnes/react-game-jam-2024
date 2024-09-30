@@ -1,8 +1,13 @@
-# React + Vite
+# Project Luke Warm Seltzer
+## Game for React Jam 2024 (https://reactjam.com/)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Repo started using https://pixijs.io/pixi-react/#quick-start
 
-Currently, two official plugins are available:
+| Game board              | Rules | Scoreboard |
+| :---------------- | :------: | ----: |
+|   ![IMG_9114](https://github.com/user-attachments/assets/064c657f-943b-4763-90be-8defa6ddb338)   | ![IMG_9112](https://github.com/user-attachments/assets/fdb6ca15-4e12-49f3-928e-3afc8fc14bab) | ![IMG_9113](https://github.com/user-attachments/assets/f9fb39af-0c13-4d54-8d7b-b1f018f20e6e) |
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+
+
+

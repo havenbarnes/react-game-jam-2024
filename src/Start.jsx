@@ -10,7 +10,7 @@ export const Start = ({ setStep }) => {
         text="Luke Warm Seltzer"
         anchor={[0.5, 0.5]}
         x={DIMENSIONS.STAGE.WIDTH / 2}
-        y={DIMENSIONS.TITLE.TOP}
+        y={DIMENSIONS.TITLE.START}
         style={
           new TextStyle({
             align: "center",

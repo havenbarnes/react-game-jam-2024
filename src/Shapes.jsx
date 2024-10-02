@@ -3,16 +3,10 @@ import { Graphics } from "@pixi/react";
 
 export const Rectangle = ({ body }) => {
   const rectangle = {
-    /**
-     * The x / y may be wrong, as I think they're the mid point and this
-     * draws considering it as the top left. Couldn't find those stored
-     * anywhere explicitly so we'd need to calculate that, maybe from the
-     * corner points?
-     * */
     x: body.position.x,
     y: body.position.y,
-    width: (Math.abs(body.bounds.max.x) + Math.abs(body.bounds.min.x)) / 2,
-    height: (Math.abs(body.bounds.max.y) + Math.abs(body.bounds.min.y)) / 2,
+    width: Math.abs(body.vertices[0].x - body.vertices[1].x),
+    height: Math.abs(body.vertices[1].y - body.vertices[2].y),
   };
 
   const draw = useCallback(
@@ -34,8 +28,6 @@ export const Circle = ({ body }) => {
     y: body.position.y,
     radius: body.circleRadius,
   };
-
-  console.log({ circle });
 
   const draw = useCallback(
     (g) => {

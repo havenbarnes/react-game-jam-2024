@@ -26,6 +26,7 @@ export const Start = ({ setStep }) => {
       />
       {options.map((option, i) => (
         <Text
+          key={i}
           text={option.title}
           anchor={[0.5, 0.5]}
           x={DIMENSIONS.STAGE.WIDTH / 2}

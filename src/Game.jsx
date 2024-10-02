@@ -1,5 +1,4 @@
 import { Container, Text } from "@pixi/react";
-import { TextStyle } from "pixi.js";
 import { DIMENSIONS, half } from "./game/dimensions";
 import { PlayScreen } from "./PlayScreen";
 import { useSeconds } from "./use-seconds";

@@ -7,6 +7,9 @@ const padZeroes = (time) => {
   return time;
 };
 
+export const formatSeconds = (seconds) =>
+  `${padZeroes(Math.floor(seconds / 60))}:${padZeroes(seconds % 60)}`;
+
 export const useSeconds = () => {
   const [seconds, setSeconds] = useState(0);
 
@@ -18,9 +21,7 @@ export const useSeconds = () => {
     return () => clearInterval(intervalId);
   }, []);
 
-  const formattedTime = `${padZeroes(Math.floor(seconds / 60))}:${padZeroes(
-    seconds % 60
-  )}`;
+  const formattedTime = formatSeconds(seconds);
 
   return {
     seconds,

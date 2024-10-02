@@ -5,6 +5,7 @@ import { Stage } from "@pixi/react";
 import { DIMENSIONS } from "./game/dimensions";
 import { Game } from "./Game";
 import { Start } from "./Start";
+import { Leaderboard } from "./Leaderboard";
 import { useState } from "react";
 
 const App = () => {
@@ -18,6 +19,7 @@ const App = () => {
     >
       {step === "start" && <Start setStep={setStep} />}
       {step === "game" && <Game />}
+      {step === "leaderboard" && <Leaderboard />}
     </Stage>
   );
 };

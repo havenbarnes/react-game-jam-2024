@@ -19,6 +19,16 @@ export const getTitleTextStyle = () => new TextStyle({
   wordWrapWidth: 440,
 })
 
+export const getMenuTextStyle = () => new TextStyle({
+  fontFamily: '"Source Sans Pro", Helvetica, sans-serif',
+  fontSize: 20,
+  fontWeight: "600",
+  fill: ["#ffffff", "#00ff99"],
+  stroke: "#EB6424",
+  strokeThickness: 5,
+  letterSpacing: 10,
+})
+
 export const getDefaultTextStyle = () => new TextStyle({
   align: "center",
   fontFamily: '"Press Start 2P", monospace',

@@ -1,7 +1,18 @@
 import "@pixi/events";
 import { Container, Text } from "@pixi/react";
 import { DIMENSIONS } from "./game/dimensions";
-import { getTitleTextStyle } from "./textStyles";
+import { getMenuTextStyle, getTitleTextStyle } from "./textStyles";
+
+const options = [
+  {
+    title: "Start",
+    step: "game",
+  },
+  {
+    title: "Leaderboard",
+    step: "leaderboard",
+  },
+];
 
 export const Start = ({ setStep }) => {
   return (
@@ -13,15 +24,17 @@ export const Start = ({ setStep }) => {
         y={DIMENSIONS.TITLE.START}
         style={getTitleTextStyle()}
       />
-      <Text
-        text="Start"
-        anchor={[0.5, 0.5]}
-        x={DIMENSIONS.STAGE.WIDTH / 2}
-        y={DIMENSIONS.TITLE.START + 100}
-        eventMode="dynamic"
-        click={() => setStep("game")}
-        style={getTitleTextStyle()}
-      />
+      {options.map((option, i) => (
+        <Text
+          text={option.title}
+          anchor={[0.5, 0.5]}
+          x={DIMENSIONS.STAGE.WIDTH / 2}
+          y={DIMENSIONS.TITLE.START + 100 + 50 * (i + 1)}
+          eventMode="dynamic"
+          click={() => setStep(option.step)}
+          style={getMenuTextStyle()}
+        />
+      ))}
     </Container>
   );
 };

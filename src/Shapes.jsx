@@ -19,7 +19,7 @@ export const Rectangle = ({ body }) => {
     [body.position.x, body.position.y]
   );
 
-  return <Graphics draw={draw} />;
+  return <Graphics draw={draw} rotation={0.5} />;
 };
 
 export const Circle = ({ body }) => {

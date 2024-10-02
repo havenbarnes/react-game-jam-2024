@@ -22,7 +22,7 @@ export const Rectangle = ({ body }) => {
       g.drawRect(rectangle.x, rectangle.y, rectangle.width, rectangle.height);
       g.endFill();
     },
-    [body]
+    [body.position.x, body.position.y]
   );
 
   return <Graphics draw={draw} />;
@@ -35,6 +35,8 @@ export const Circle = ({ body }) => {
     radius: body.circleRadius,
   };
 
+  console.log({ circle });
+
   const draw = useCallback(
     (g) => {
       g.clear();
@@ -42,7 +44,7 @@ export const Circle = ({ body }) => {
       g.drawCircle(circle.x, circle.y, circle.radius);
       g.endFill();
     },
-    [body]
+    [body.position.x, body.position.y]
   );
 
   return <Graphics draw={draw} />;

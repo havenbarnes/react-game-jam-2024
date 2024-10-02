@@ -13,7 +13,12 @@ export const useGame = () => {
   const [engine, setEngine] = useState();
 
   useEffect(() => {
-    const engine = Engine.create();
+    const engine = Engine.create({
+      gravity: {
+        y: 0.01,
+        x: 0,
+      },
+    });
     setEngine(engine);
     const runner = Runner.create({
       delta: 1000 / 60,
@@ -70,7 +75,7 @@ export const useGame = () => {
       Bodies.rectangle(800, 300, 50, 600, { isStatic: true }),
       Bodies.rectangle(0, 300, 50, 600, { isStatic: true }),
 
-      Bodies.circle(50, 50, 25, { isStatic: true })
+      Bodies.circle(50, 100, 25),
     ]);
 
     setEngine(engine);

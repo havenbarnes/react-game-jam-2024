@@ -3,6 +3,12 @@ import { Graphics } from "@pixi/react";
 
 export const Rectangle = ({ body }) => {
   const rectangle = {
+    /**
+     * The x / y may be wrong, as I think they're the mid point and this
+     * draws considering it as the top left. Couldn't find those stored
+     * anywhere explicitly so we'd need to calculate that, maybe from the
+     * corner points?
+     * */
     x: body.position.x,
     y: body.position.y,
     width: (Math.abs(body.bounds.max.x) + Math.abs(body.bounds.min.x)) / 2,

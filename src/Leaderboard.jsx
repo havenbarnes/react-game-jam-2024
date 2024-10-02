@@ -1,6 +1,6 @@
 import { useLeaderboard } from "./use-leaderboard";
 import { Container, Text } from "@pixi/react";
-import { DIMENSIONS, half } from "./game/dimensions";
+import { DIMENSIONS, half } from "./game/constants";
 import { getDefaultTextStyle } from "./textStyles";
 import { formatSeconds } from "./use-seconds";
 

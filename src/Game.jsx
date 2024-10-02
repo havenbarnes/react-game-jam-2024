@@ -1,5 +1,5 @@
 import { Container, Text } from "@pixi/react";
-import { DIMENSIONS, half } from "./game/dimensions";
+import { DIMENSIONS, half } from "./game/constants";
 import { PlayScreen } from "./PlayScreen";
 import { useSeconds } from "./use-seconds";
 import { useState } from "react";

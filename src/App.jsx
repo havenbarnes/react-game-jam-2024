@@ -2,7 +2,7 @@ import "./App.css";
 
 import "@pixi/events";
 import { Stage } from "@pixi/react";
-import { DIMENSIONS } from "./game/dimensions";
+import { DIMENSIONS } from "./game/constants";
 import { Game } from "./Game";
 import { Start } from "./Start";
 import { Leaderboard } from "./Leaderboard";

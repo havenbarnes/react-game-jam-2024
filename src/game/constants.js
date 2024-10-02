@@ -1,6 +1,8 @@
 // Used to make game bigger, proprotionally
 const RESOLUTION_MULTIPLIER = 1.4;
 
+export const FRAMES_PER_SECOND = 1;
+
 export const DIMENSIONS = {
   FONT_SIZE: 12 * RESOLUTION_MULTIPLIER,
   STAGE: {

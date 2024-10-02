@@ -1,6 +1,6 @@
 import "@pixi/events";
 import { Container, Text } from "@pixi/react";
-import { DIMENSIONS } from "./game/dimensions";
+import { DIMENSIONS } from "./game/constants";
 import { getMenuTextStyle, getTitleTextStyle } from "./textStyles";
 
 const options = [

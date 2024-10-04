@@ -5,6 +5,7 @@ import {
   Body,
   Composite,
   Engine,
+  Events,
   Render,
   Runner,
   World,
@@ -13,18 +14,18 @@ import {
 export const PlayScreen = ({ level, onSuccess, onFail }) => {
   const scene = useRef();
   const engine = useRef(Engine.create());
-  const [bar, setBar] = useState();
 
-  // Increase angle every 1 ms
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      Body.set(bar, "angle", bar.angle + 0.001);
-    }, 1);
+  const [keysPressed, setKeysPressed] = useState([]);
 
-    return () => {
-      clearInterval(intervalId);
-    };
-  }, [bar]);
+  document.addEventListener("keydown", (e) => {
+    if (!keysPressed.includes(e.code)) {
+      setKeysPressed([...keysPressed, e.code]);
+    }
+  });
+
+  document.addEventListener("keyup", (e) => {
+    setKeysPressed((curr) => curr.filter((el) => el !== e.code));
+  });
 
   useEffect(() => {
     // mount
@@ -75,7 +76,13 @@ export const PlayScreen = ({ level, onSuccess, onFail }) => {
       angle: 0.5,
     });
     Composite.add(engine.current.world, [bar]);
-    setBar(bar);
+
+    Events.on(engine.current, "beforeUpdate", () => {
+      Body.setPosition(bar, {
+        x: bar.position.x + 1,
+        y: bar.position.y,
+      });
+    });
 
     Runner.run(runner, engine.current);
     Render.run(render);

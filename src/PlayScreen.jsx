@@ -15,18 +15,6 @@ export const PlayScreen = ({ level, onSuccess, onFail }) => {
   const scene = useRef();
   const engine = useRef(Engine.create());
 
-  const [keysPressed, setKeysPressed] = useState([]);
-
-  document.addEventListener("keydown", (e) => {
-    if (!keysPressed.includes(e.code)) {
-      setKeysPressed([...keysPressed, e.code]);
-    }
-  });
-
-  document.addEventListener("keyup", (e) => {
-    setKeysPressed((curr) => curr.filter((el) => el !== e.code));
-  });
-
   useEffect(() => {
     // mount
     const cw = DIMENSIONS.STAGE.WIDTH;
@@ -77,11 +65,21 @@ export const PlayScreen = ({ level, onSuccess, onFail }) => {
     });
     Composite.add(engine.current.world, [bar]);
 
+    const keysDown = new Set();
+    document.addEventListener("keydown", (event) => {
+      keysDown.add(event.code);
+    });
+    document.addEventListener("keyup", (event) => {
+      keysDown.delete(event.code);
+    });
+
     Events.on(engine.current, "beforeUpdate", () => {
-      Body.setPosition(bar, {
-        x: bar.position.x + 1,
-        y: bar.position.y,
-      });
+      if (keysDown.has("w")) {
+        Body.setPosition(bar, {
+          x: bar.position.x + 1,
+          y: bar.position.y,
+        });
+      }
     });
 
     Runner.run(runner, engine.current);

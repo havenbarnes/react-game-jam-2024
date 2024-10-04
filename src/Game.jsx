@@ -1,42 +1,39 @@
-import { Container, Text } from "@pixi/react";
-import { DIMENSIONS, half } from "./game/constants";
-import { PlayScreen } from "./PlayScreen";
-import { useSeconds } from "./use-seconds";
 import { useState } from "react";
+import { Stack, Text } from "@mantine/core";
+import { useSeconds } from "./use-seconds";
+import { PlayScreen } from "./PlayScreen";
 import { getDefaultTextStyle } from "./textStyles";
 
-export const Game = () => {
+export const Game = ({ setStep }) => {
   const [level, setLevel] = useState(1);
   const { formattedTime } = useSeconds();
+  const [enabled, setEnabled] = useState(true);
+
+  const reset = () => {
+    setEnabled(false);
+    setTimeout(() => {
+      setEnabled(true);
+    }, 100);
+  };
+
+  if (!enabled) {
+    return null;
+  }
 
   return (
-    <Container>
-      <Text
-        text="Luke Warm Seltzer"
-        x={half(DIMENSIONS.STAGE.WIDTH)}
-        y={DIMENSIONS.TITLE.GAME}
-        anchor={[0.5, 0]}
-        style={getDefaultTextStyle()}
-      />
-      <PlayScreen
-        level={level}
-        onSuccess={() => setLevel(level + 1)}
-        onFail={null}
-      />
-      <Text
-        text={`Level ${level}`}
-        x={DIMENSIONS.STAGE.WIDTH * 0.25}
-        y={DIMENSIONS.STAGE.HEIGHT - DIMENSIONS.FONT_SIZE * 2}
-        anchor={[0.5, 0]}
-        style={getDefaultTextStyle()}
-      />
-      <Text
-        text={formattedTime}
-        x={DIMENSIONS.STAGE.WIDTH * 0.75}
-        y={DIMENSIONS.STAGE.HEIGHT - DIMENSIONS.FONT_SIZE * 2}
-        anchor={[0.5, 0]}
-        style={getDefaultTextStyle()}
-      />
-    </Container>
+    <Stack>
+      {enabled && <PlayScreen />}
+      <Stack gap="md">
+        <Text style={getDefaultTextStyle()}>Luke Warm Seltzer</Text>
+        <Text style={getDefaultTextStyle()}>{`Level ${level}`}</Text>
+        <Text style={getDefaultTextStyle()}>{formattedTime}</Text>
+        <Text onClick={reset} style={getDefaultTextStyle()}>
+          Reset
+        </Text>
+        <Text onClick={() => setStep("start")} style={getDefaultTextStyle()}>
+          Back
+        </Text>
+      </Stack>
+    </Stack>
   );
 };

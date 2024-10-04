@@ -1,7 +1,5 @@
-import "@pixi/events";
-import { Container, Text } from "@pixi/react";
-import { DIMENSIONS } from "./game/constants";
 import { getMenuTextStyle, getTitleTextStyle } from "./textStyles";
+import { Stack, Text } from "@mantine/core";
 
 const options = [
   {
@@ -14,28 +12,19 @@ const options = [
   },
 ];
 
-export const Start = ({ setStep }) => {
+export const Start = (props) => {
   return (
-    <Container align="center" eventMode="dynamic">
-      <Text
-        text="Luke Warm Seltzer"
-        anchor={[0.5, 0.5]}
-        x={DIMENSIONS.STAGE.WIDTH / 2}
-        y={DIMENSIONS.TITLE.START}
-        style={getTitleTextStyle()}
-      />
+    <Stack align="center">
+      <Text style={getTitleTextStyle()}>Luke Warm Seltzer</Text>
       {options.map((option, i) => (
         <Text
           key={i}
-          text={option.title}
-          anchor={[0.5, 0.5]}
-          x={DIMENSIONS.STAGE.WIDTH / 2}
-          y={DIMENSIONS.TITLE.START + 100 + 50 * (i + 1)}
-          eventMode="dynamic"
-          click={() => setStep(option.step)}
+          onClick={() => props.setStep(option.step)}
           style={getMenuTextStyle()}
-        />
+        >
+          {option.title}
+        </Text>
       ))}
-    </Container>
+    </Stack>
   );
 };

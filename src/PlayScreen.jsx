@@ -18,7 +18,7 @@ export const PlayScreen = ({ level, onSuccess, onFail }) => {
   // Increase angle every 1 ms
   useEffect(() => {
     const intervalId = setInterval(() => {
-      Body.set(bar, "angle", bar.angle + 0.01);
+      Body.set(bar, "angle", bar.angle + 0.001);
     }, 1);
 
     return () => {
